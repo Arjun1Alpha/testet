@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: "#home",
       start: "top 0%",
       end: "bottom 0%",
+      toggleActions: "play none none reverse",
       scrub: true,
       onLeave: () => {
         if (window.innerWidth > 768) {
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("form").style.transform = "translateY(100%)";
         } else {
           document.querySelector(".fixedBtn").style.transform =
-            "translateY(100%)";
+            "translateY(150%)";
         }
       },
     },
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: "#second",
       start: "top center",
+      toggleActions: "play none none reverse",
     },
   });
 
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .from("#second .imgg1", { y: "70%", ease: "power4.out", duration: 1 }, "0") //top most
     .from("#second .projected", {
       y: "100px",
+      x: "-50%",
       ease: "power4.out",
       duration: 1,
       opacity: 0,
@@ -88,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: "#second .left",
       start: "top 80%",
+      toggleActions: "play none none reverse",
     },
   });
 
@@ -100,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: "#third ",
       start: "top 80%",
+      toggleActions: "play none none reverse",
     },
   });
 
@@ -112,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: "#forth ",
       start: "top 80%",
+      toggleActions: "play none none reverse",
     },
   });
 
@@ -124,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: "#fifth ",
       start: "top 80%",
+      toggleActions: "play none none reverse",
     },
   });
 

@@ -583,11 +583,15 @@
     padding: var(--paddingY) var(--paddingX);
   }
   #forth .layer {
-    height: 100px;
+    height: 50px;
   }
   #fifth {
     grid-template-columns: auto;
-    gap: 50px;
+    gap: 80px;
+  }
+  #fifth > div p {
+    font-size: var(--font-34);
+    text-align: center;
   }
   #fifth > div div {
     justify-content: flex-start;
@@ -643,16 +647,28 @@
     margin-top: 30px;
     text-align: center;
   }
+  #forth {
+    overflow: hidden;
+  }
+  #forth .factory {
+    width: 175%;
+  }
   #forth .content {
     grid-template-columns: auto;
+  }
+  #forth .content .left p {
+    font-size: var(--font-34);
   }
   #forth .content .left img {
     width: 200px;
   }
+  #fifth .shareholder div img:first-child {
+    height: 40px;
+  }
   #fifth > div div {
     row-gap: 30px;
-    -moz-column-gap: 50px;
-         column-gap: 50px;
+    -moz-column-gap: 40px;
+         column-gap: 40px;
     align-items: center;
     justify-content: center;
   }
@@ -660,10 +676,12 @@
     gap: 50px;
   }
   #second .right .projected {
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
   #second .right .projected p {
     font-size: 14px;
+    white-space: pre;
   }
   #second .right .projected h3 {
     font-size: 22px;
@@ -695,7 +713,7 @@
   #form {
     grid-template-columns: auto;
     gap: 10px;
-    height: 100vh;
+    height: 100dvh;
     transform: unset;
     display: flex;
     opacity: 0;
@@ -709,6 +727,7 @@
     margin-bottom: 20px;
     font-size: var(--font-34);
     font-weight: 700px;
+    text-align: center;
   }
   #form img {
     display: block;
@@ -716,8 +735,15 @@
     width: 30px;
     filter: invert(1);
     position: absolute;
-    top: 50px;
+    top: 100px;
     right: 30px;
+  }
+  #form .logo {
+    position: unset;
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: invert(0);
   }
   #form.active {
     opacity: 1;
@@ -733,7 +759,25 @@
             backdrop-filter: blur(20px);
     position: fixed;
     bottom: 0;
-    transform: translateY(100%);
+    transform: translateY(150%);
     transition: all 0.2s ease;
+  }
+  .fixedBtn:after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    background: url("./assets/arrow.png") no-repeat center/contain;
+    bottom: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8078431373);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    color: rgba(0, 0, 0, 0.8078431373);
+    font-size: 40px;
+    font-weight: 700;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
   }
 }/*# sourceMappingURL=style.css.map */
