@@ -261,22 +261,15 @@
             font-size: var(--font-34);
             font-weight: 500;
             line-height: 1.1;
+            overflow: hidden;
         }
         .leftpop {
             left: 5%;
             bottom: 10%;
         }
-        .leftpop.pop2 {
-            bottom: 13%;
-            opacity: 0;
-        }
         .rightpop {
             right: -5vw;
             bottom: 25%;
-        }
-        .rightpop.pop4 {
-            opacity: 0;
-            bottom: 20%;
         }
     }
 }
@@ -619,7 +612,7 @@
         grid-template-columns: auto;
         gap: 80px;
         & > div {
-            p{
+            p {
                 font-size: var(--font-34);
                 text-align: center;
             }
@@ -685,13 +678,13 @@
 
     #forth {
         overflow: hidden;
-        .factory{
+        .factory {
             width: 175%;
         }
         .content {
             grid-template-columns: auto;
             .left {
-                p{
+                p {
                     font-size: var(--font-34);
                 }
                 img {
@@ -701,9 +694,9 @@
         }
     }
     #fifth {
-        .shareholder{
-            div{
-                img:first-child{    
+        .shareholder {
+            div {
+                img:first-child {
                     height: 40px;
                 }
             }
@@ -736,9 +729,11 @@
             }
             .leftpop {
                 left: 0;
+                bottom: 0;
             }
             .rightpop {
                 right: 0;
+                bottom: 0;
             }
             .chips {
                 .arrow {
@@ -794,7 +789,7 @@
             top: 100px;
             right: 30px;
         }
-        .logo{
+        .logo {
             position: unset;
             height: 50px;
             width: auto;
@@ -809,30 +804,37 @@
     .fixedBtn {
         display: flex;
         justify-content: center;
+        flex-direction: column;
         width: 100%;
-        padding: 10px var(--paddingX);
-        background: #000000ce;
-        backdrop-filter: blur(20px);
+        align-items: center;
         position: fixed;
         bottom: 0;
         transform: translateY(150%);
         transition: all 0.2s ease;
-        &:after {
-            content: "";
-            position: absolute;
+        & > .arrowDiv {
             width: 120px;
-            height: 20px;
-            background: url("./assets/arrow.png") no-repeat center/contain;
-            bottom: 100%;
-            left: 0;
-            background-color: #000000ce;
+            height: 20px;            
+            background: #000000ce;
             backdrop-filter: blur(20px);
-            color: #000000ce;
             font-size: 40px;
-            font-weight: 700;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 10px 10px 0 0 ;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(0px);
+            img {
+                height: 17px;
+                width: auto;
+            }
+        }
+        & > .ctaDiv {
+            background: #000000ce;
+            backdrop-filter: blur(20px);
+            padding: 15px var(--paddingX);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center ;
         }
     }
 }

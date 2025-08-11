@@ -139,16 +139,23 @@ document.addEventListener("DOMContentLoaded", function () {
     [".pop2", ".pop4"],
   ];
 
-  let tl1 = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+  let tl1 = gsap.timeline({ repeat: -1 });
 
-  pairs.forEach(([el1, el2]) => {
+  pairs.forEach(([el1, el2], i) => {
     tl1
       .fromTo(
         [el1, el2],
-        { opacity: 0 },
-        { opacity: 1, duration: 0.8, ease: "power1.inOut" }
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power1.inOut" },
+        i === 0 ? 0 : "-=0.4" // slight overlap between animations
       )
-      .to([el1, el2], { opacity: 0, duration: 0.8, ease: "power1.inOut" });
+      .to([el1, el2], { opacity: 1, duration: 1.5 }) // longer stay time
+      .to([el1, el2], {
+        opacity: 0,
+        y: -100,
+        duration: 0.8,
+        ease: "power1.inOut",
+      });
   });
 
   gsap.fromTo(
@@ -169,14 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   );
 
-
-
-  document.querySelector('.fixedBtn').addEventListener('click', function(){
-    document.querySelector("#form").classList.add('active')
-  })
-  document.querySelector('.close').addEventListener('click', function(){
-    document.querySelector("#form").classList.remove('active')
-  })
-
-
+  document.querySelector(".fixedBtn").addEventListener("click", function () {
+    document.querySelector("#form").classList.add("active");
+  });
+  document.querySelector(".close").addEventListener("click", function () {
+    document.querySelector("#form").classList.remove("active");
+  });
 });

@@ -258,22 +258,15 @@
   font-size: var(--font-34);
   font-weight: 500;
   line-height: 1.1;
+  overflow: hidden;
 }
 #second .right .leftpop {
   left: 5%;
   bottom: 10%;
 }
-#second .right .leftpop.pop2 {
-  bottom: 13%;
-  opacity: 0;
-}
 #second .right .rightpop {
   right: -5vw;
   bottom: 25%;
-}
-#second .right .rightpop.pop4 {
-  opacity: 0;
-  bottom: 20%;
 }
 
 #third {
@@ -691,9 +684,11 @@
   }
   #second .right .leftpop {
     left: 0;
+    bottom: 0;
   }
   #second .right .rightpop {
     right: 0;
+    bottom: 0;
   }
   #second .right .chips .arrow {
     height: 45%;
@@ -752,32 +747,39 @@
   .fixedBtn {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
-    padding: 10px var(--paddingX);
-    background: rgba(0, 0, 0, 0.8078431373);
-    -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
+    align-items: center;
     position: fixed;
     bottom: 0;
     transform: translateY(150%);
     transition: all 0.2s ease;
   }
-  .fixedBtn:after {
-    content: "";
-    position: absolute;
+  .fixedBtn > .arrowDiv {
     width: 120px;
     height: 20px;
-    background: url("./assets/arrow.png") no-repeat center/contain;
-    bottom: 100%;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8078431373);
+    background: rgba(0, 0, 0, 0.8078431373);
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
-    color: rgba(0, 0, 0, 0.8078431373);
     font-size: 40px;
-    font-weight: 700;
-    left: 50%;
-    transform: translateX(-50%);
     border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0px);
+  }
+  .fixedBtn > .arrowDiv img {
+    height: 17px;
+    width: auto;
+  }
+  .fixedBtn > .ctaDiv {
+    background: rgba(0, 0, 0, 0.8078431373);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    padding: 15px var(--paddingX);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */
