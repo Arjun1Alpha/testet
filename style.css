@@ -495,10 +495,6 @@
   :root {
     --paddingX: 5vw;
   }
-  #second {
-    height: auto;
-    aspect-ratio: 16/9;
-  }
   #second .right .rightpop {
     right: -2.5vw;
   }
